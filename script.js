@@ -27,3 +27,31 @@ const restaurant = {
     },
   },
 };
+
+// YOU CAN USE AND and OR to SHORT CIRCUIT things
+
+console.log(3 || 'Jonas');
+// If first value is truthy, second value will not even be looked at
+
+console.log('' || 'Jonas');
+// this gives you Jonas
+
+console.log(true || 0);
+//this gives you true
+
+console.log(undefined || null);
+// this gives you null
+
+console.log(undefined || 0 || '' || 'Hello' || 23 || null);
+// result is HELLO because hello is the first truthy value
+
+const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guests1)
+//this gives you undefined or 10 so it is 10
+
+//NOW
+restaurant.numGuests = 23;
+
+const guest2 = restaurant.numGuests || 10
+console.log(guest2);
+
